@@ -2,4 +2,18 @@
 
 require_relative '../lib/drivegit'
 
-DriveGit.info
+command = ARGV[0]
+
+case command
+when 'list'
+  DriveGit::DriveModule.list_files
+when 'upload'
+  filepath = ARGV[1]
+  DriveGit::DriveModule.upload_file(filepath)
+when 'download'
+  filename = ARGV[1]
+  download_path = ARGV[2]
+  DriveGit::DriveModule.download_file(filename, download_path)
+else
+  puts "Unknown command: #{command}"
+end
