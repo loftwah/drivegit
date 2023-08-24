@@ -56,8 +56,17 @@ end
     def self.download_file(filename, download_path)
       session = authenticate
       file = session.file_by_title(filename)
-      file.download_to_file(download_path)
-    end
+      file_id = file.id
+    
+      drive_service = session.drive_service
+      dest_path = File.join(download_path, filename)
+    
+      File.open(dest_path, 'wb') do |file_io|
+        drive_service.get_file(file_id, download_dest: file_io)
+      end
+    
+      puts "File downloaded to #{dest_path}"
+    end       
 
     def self.list_files
       session = authenticate
