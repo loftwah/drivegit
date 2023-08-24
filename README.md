@@ -1,5 +1,7 @@
 # drivegit
 
+![drivegit](https://github.com/loftwah/drivegit/assets/19922556/2309f6c7-7558-44df-8f0e-8dfa412d427e)
+
 drivegit. A random idea I had that works as an adapter between Git and Google Drive so you can horrify people by telling them you store your code in Google Drive.
 
 ## How it works
