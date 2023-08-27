@@ -33,8 +33,9 @@ Drivegit is a fantastic yet terrifying idea that serves as an adapter between Gi
 
 ```bash
 bin/drivegit clone your_folder_name_on_drive
-This will bring the magic box called your_folder_name_on_drive from Google Drive cave to local cave (./ by default).
 ```
+
+This will bring the magic box called your_folder_name_on_drive from Google Drive cave to local cave (./ by default).
 
 ### Initialize a Repo
 
