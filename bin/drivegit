@@ -14,6 +14,14 @@ when 'download'
   filename = ARGV[1]
   download_path = ARGV[2]
   DriveGit::DriveModule.download_file(filename, download_path)
+when 'init'
+  DriveGit::GitModule.init
+when 'clone'
+  DriveGit::GitModule.clone
+when 'push'
+  DriveGit::GitModule.push
+when 'pull'
+  DriveGit::GitModule.pull
 else
   puts "Unknown command: #{command}"
 end
