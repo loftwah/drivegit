@@ -65,11 +65,35 @@ module DriveGit
       puts "File downloaded to #{dest_path}"
     end
 
+    def self.list_directories
+      session = authenticate
+      session.files.each do |file|
+        if file.mime_type == 'application/vnd.google-apps.folder'
+          puts "Directory: #{file.title}"
+        end
+      end
+    end
+
     def self.list_files
       session = authenticate
       session.files.each do |file|
         puts file.title
       end
     end
+
+    def self.list_files_in_folder(folder_name)
+      session = authenticate
+      folder = session.collection_by_title(folder_name)
+    
+      if folder.nil?
+        puts "No such folder: #{folder_name}. Grug sad."
+        return
+      end
+    
+      folder.files.each do |file|
+        puts file.title
+      end
+    end    
+
   end
 end

@@ -7,6 +7,8 @@ command = ARGV[0]
 case command
 when 'list'
   DriveGit::DriveModule.list_files
+when 'list-dirs'
+  DriveGit::DriveModule.list_directories
 when 'upload'
   filepath = ARGV[1]
   DriveGit::DriveModule.upload_file(filepath)
@@ -15,9 +17,12 @@ when 'download'
   download_path = ARGV[2]
   DriveGit::DriveModule.download_file(filename, download_path)
 when 'init'
-  DriveGit::GitModule.init
+  repo_name = ARGV[1] || 'drivegit'
+  DriveGit::GitModule.init(repo_name)
 when 'clone'
-  DriveGit::GitModule.clone
+  folder_name = ARGV[1] || 'default_folder'  # Here, default_folder is what Grug use if no folder given
+  download_path = ARGV[2] || './'  # Grug can still have default path
+  DriveGit::GitModule.clone(folder_name, download_path)
 when 'push'
   DriveGit::GitModule.push
 when 'pull'
