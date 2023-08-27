@@ -1,8 +1,8 @@
-# drivegit
+# DriveGit
 
-![drivegit](https://github.com/loftwah/drivegit/assets/19922556/6b63ed33-eaa2-4e50-ab38-99dca48d809f)
+![DriveGit](https://github.com/loftwah/drivegit/assets/19922556/6b63ed33-eaa2-4e50-ab38-99dca48d809f)
 
-Drivegit is a fantastic yet terrifying idea that serves as an adapter between Git and Google Drive. Yes, you heard right, store your code in Google Drive and watch devs make sour face!
+DriveGit is a fantastic yet terrifying idea that serves as an adapter between Git and Google Drive. Yes, you heard right, store your code in Google Drive and watch devs make sour face!
 
 ## How it works
 
